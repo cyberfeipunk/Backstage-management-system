@@ -1,6 +1,6 @@
 <template>
-<div style="min-height: calc(100vh - 100px); background-color: #545c64">
-  <el-menu class="el-menu-vertical-demo" :default-openeds="['1','2']" @open="handleOpen" @close="handleClose"
+<el-aside style="min-height: 100%; background-color: #545c64; overflow: hidden">
+  <el-menu class="el-menu-vertical-demo" :default-openeds="['1','2']" router default-active="/CarouselTable" @open="handleOpen" @close="handleClose"
     background-color="#545c64" text-color="#fff" active-text-color="#409EFF">
     <el-submenu index="1">
       <template slot="title">
@@ -8,9 +8,8 @@
         <span>导航一</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
-        <el-menu-item index="1-3">选项3</el-menu-item>
+        <el-menu-item index="/CarouselTable">轮播图和表格</el-menu-item>
+        <el-menu-item index="/Echarts">图表(Echarts)</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="2">
@@ -19,13 +18,11 @@
         <span>导航二</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
+        <el-menu-item index="2-1">个人中心(表单)</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
   </el-menu>
-</div>
+</el-aside>
 </template>
 
 <script>

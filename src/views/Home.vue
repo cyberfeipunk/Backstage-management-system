@@ -5,13 +5,12 @@
     <the-header />
   </el-header>
   <el-container class="body-wrap">
-    <el-aside width="200px" :class="{'open': open}">
-      <the-nav />
-    </el-aside>
-    <el-container class="main-wrap">
-      <el-main>Main</el-main>
-      <el-footer>Footer</el-footer>
-    </el-container>
+    <the-nav :class="{'open': open}" />
+    <el-main>
+      <div class="main">
+        <router-view></router-view>
+      </div>
+    </el-main>
   </el-container>
 </el-container>
 </template>
@@ -19,6 +18,7 @@
 <script>
 import TheHeader from '@/components/TheHeader'
 import TheNav from '@/components/TheNav'
+import CarouselTable from '@/views/CarouselTable'
 export default {
   name: 'home',
   data () {
@@ -28,7 +28,8 @@ export default {
   },
   components: {
     TheHeader,
-    TheNav
+    TheNav,
+    CarouselTable
   },
   methods: {
     handleOpen () {
@@ -63,9 +64,12 @@ export default {
     position: relative;
     overflow: hidden;
     .el-aside {
+      z-index: 999;
+      min-width: 200px;
+      max-width: 200px;
+      height: calc(100vh - 100px);
       background-color: #D3DCE6;
       color: #333;
-      line-height: 200px;
       @include tran-horizontal(0, 0.4s);
       @media screen and (max-width: $smallSize) {
         position: absolute;
@@ -75,19 +79,23 @@ export default {
         @include tran-horizontal(100%, 0.4s);
       }
     }
-    .main-wrap {
-      .el-main {
+    .el-main {
+      z-index: 1;
+      background-color: rgba(155, 155, 155, 0.1);
+      color: #333;
+      text-align: center;
+      .main {
         background-color: #fff;
-        color: #333;
-        text-align: center;
-        line-height: 160px;
+        padding: 10px;
+        border-radius: 10px;
+        min-height: calc(100vh - 200px)
       }
-      .el-footer {
-        color: #333;
-        line-height: 70px;
-        text-align: center;
-        background-color: #D3DCE6;
-      }
+    }
+    .el-footer {
+      color: #333;
+      line-height: 70px;
+      text-align: center;
+      background-color: #D3DCE6;
     }
   }
 }
