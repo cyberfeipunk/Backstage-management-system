@@ -18,7 +18,7 @@
         <span>导航二</span>
       </template>
       <el-menu-item-group>
-        <el-menu-item index="2-1">个人中心(表单)</el-menu-item>
+        <el-menu-item index="/FormView">个人中心(表单)</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
   </el-menu>

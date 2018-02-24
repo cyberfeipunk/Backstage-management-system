@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import CarouselTable from '@/views/CarouselTable'
 import Echarts from '@/views/Echarts'
+import FormView from '@/views/FormView'
 
 Vue.use(Router)
 
@@ -23,6 +24,10 @@ export default new Router({
         {
           path: '/Echarts',
           component: Echarts
+        },
+        {
+          path: '/FormView',
+          component: FormView
         }
       ]
     }

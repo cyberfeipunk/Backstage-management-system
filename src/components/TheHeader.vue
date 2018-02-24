@@ -19,7 +19,7 @@ export default {
   name: 'TheHeader',
   data () {
     return {
-      name: 'holyzhengs'
+      name: '游客'
     }
   }
 }
