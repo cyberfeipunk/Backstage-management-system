@@ -1,6 +1,31 @@
   寒假结束了，趁着寒假，自己玩了一下element和echarts去实现了一个简单的后台管理系统。
 项目比较简单，十分适合入门，涉及到了轮播图，表格，表单，echarts柱形图和折线图，以及网页的响应式等。
 
+```
+src
+  |---common                     // 公用的文件
+        |---css
+             |---base.scss      // 公用的css样式
+        |---components          // 组件      
+             |---Carousel.vue   // 轮播图组件
+             |---Form.vue       // 表单组件
+             |---Tables.vue     // 表格组件
+             |---TheHeader.vue  // header组件
+             |---TheNav.vue     // 左侧导航栏组件
+             |---TwoEcharts.vue // 柱形图和折线图组件
+        |---images
+             |---portrait.png   // 头像
+        |---router
+             |---index.js       // 路由
+        |---views
+             |---CarouseTable.vue // 轮播图和表格页面
+             |---Echarts.vue      // echarts图表页面
+             |---FormView.vue     // 表单页面
+  |---App.vue                     // 总app入口
+  |---main.js                     // app实例
+
+```
+
 #技术栈
 - vue ^2.5.2、 vue-router
 - scss
